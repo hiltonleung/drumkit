@@ -22,11 +22,13 @@
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     playAudio(this.innerHTML);
+    playAnimation(this.innerHTML);
   });
 }
 
 document.addEventListener("keydown", function(event) {
   playAudio(event.key);
+  playAnimation(event.key);
 });
 
 function playAudio(input) {
@@ -68,4 +70,9 @@ function playAudio(input) {
 
     default: console.log();
   }
+}
+
+function playAnimation (input) {
+  input.classList.add("pressed");
+  setTimeout(input.classList.remove("pressed", 100));
 }
