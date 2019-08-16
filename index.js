@@ -73,6 +73,10 @@ function playAudio(input) {
 }
 
 function playAnimation (input) {
-  document.querySelector("."+input).classList.add("pressed");
-  setTimeout(document.querySelector("."+input).classList.remove("pressed", 100));
+  var buttonPress = document.querySelector("."+input);
+
+  buttonPress.classList.add("pressed");
+  setTimeout(function() {
+    buttonPress.classList.remove("pressed");
+  }, 100);
 }
