@@ -73,6 +73,6 @@ function playAudio(input) {
 }
 
 function playAnimation (input) {
-  input.classList.add("pressed");
-  setTimeout(input.classList.remove("pressed", 100));
+  document.querySelector("."+input).classList.add("pressed");
+  setTimeout(document.querySelector("."+input).classList.remove("pressed", 100));
 }
